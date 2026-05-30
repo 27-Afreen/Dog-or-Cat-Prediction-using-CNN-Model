@@ -1,0 +1,21 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Train CNN",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}\\src\\train.py",
+      "args": ["--data-dir", "data\\demo", "--model", "models\\cats_dogs_cnn.npz", "--epochs", "12"],
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Predict Demo Image",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}\\src\\predict.py",
+      "args": ["--image", "data\\demo\\test\\cats\\cat_00.png", "--model", "models\\cats_dogs_cnn.npz"],
+      "console": "integratedTerminal"
+    }
+  ]
+}

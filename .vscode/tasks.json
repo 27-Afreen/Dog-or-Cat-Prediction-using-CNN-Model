@@ -1,0 +1,33 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Create demo dataset",
+      "type": "shell",
+      "command": "${workspaceFolder}\\.venv\\Scripts\\python.exe",
+      "args": ["scripts\\make_demo_dataset.py"],
+      "problemMatcher": []
+    },
+    {
+      "label": "Train CNN",
+      "type": "shell",
+      "command": "${workspaceFolder}\\.venv\\Scripts\\python.exe",
+      "args": ["src\\train.py", "--data-dir", "data\\demo", "--model", "models\\cats_dogs_cnn.npz", "--epochs", "12"],
+      "problemMatcher": []
+    },
+    {
+      "label": "Evaluate CNN",
+      "type": "shell",
+      "command": "${workspaceFolder}\\.venv\\Scripts\\python.exe",
+      "args": ["src\\evaluate.py", "--data-dir", "data\\demo", "--model", "models\\cats_dogs_cnn.npz"],
+      "problemMatcher": []
+    },
+    {
+      "label": "Predict demo image",
+      "type": "shell",
+      "command": "${workspaceFolder}\\.venv\\Scripts\\python.exe",
+      "args": ["src\\predict.py", "--image", "data\\demo\\test\\cats\\cat_00.png", "--model", "models\\cats_dogs_cnn.npz"],
+      "problemMatcher": []
+    }
+  ]
+}
